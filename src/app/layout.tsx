@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,7 +14,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-black text-white">
+        <header className="sticky top-0 z-50 flex justify-end px-4 py-5">
+          <button
+            className="flex size-11 items-center justify-center rounded-2xl bg-transparent transition-all hover:bg-black/25"
+            aria-label="Search movies"
+          >
+            <MagnifyingGlassIcon className="size-5" />
+          </button>
+        </header>
+        <main className="-mt-16">{children}</main>
+      </body>
     </html>
   );
 }

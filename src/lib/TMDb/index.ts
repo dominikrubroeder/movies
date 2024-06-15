@@ -1,6 +1,7 @@
 "use server";
 
 import { IMovie } from "@/components/atoms/Movie/types";
+import { MovieList } from "@/lib/TMDb/types";
 
 const apiKey = process.env.TMDB_API_KEY;
 const baseUrl = process.env.TMDB_BASE_URL;
@@ -8,7 +9,7 @@ const baseUrl = process.env.TMDB_BASE_URL;
 export async function fetchMovies({
   type,
 }: {
-  type: "popular";
+  type: MovieList;
 }): Promise<IMovie[] | undefined> {
   const url = `${baseUrl}/movie/${type}?api_key=${apiKey}&language=en-US&page=1`;
 

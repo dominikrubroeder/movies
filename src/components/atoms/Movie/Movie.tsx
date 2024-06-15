@@ -13,6 +13,7 @@ export default function Movie({ movie }: { movie: IMovie }) {
         className="w-full object-contain"
         width={400}
         height={600}
+        draggable={false}
       />
     </div>
   );
